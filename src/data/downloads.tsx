@@ -152,6 +152,59 @@ sudo apt install jellyfin`}
     ]
   },
   {
+    id: 'flatpak',
+    name: 'Flatpak',
+    osTypes: [OsType.Linux],
+    status: DownloadStatus.Community,
+    features: [Feature.CustomFFmpeg],
+    platforms: [Platform.Linux],
+    description: 'Install Jellyfin via Flathub.',
+    stableButtons: [
+      {
+        id: 'flatpak-stable-button',
+        name: 'Install Instructions',
+        details: (
+          <>
+            <p>
+              <b>Note:</b> Make sure Flatpak and Flathub are already setup before installing.
+            </p>
+            <pre>
+              <code>
+                {`flatpak install flathub org.jellyfin.JellyfinServer`}
+              </code>
+            </pre>
+            <p>
+              <b>Note:</b> If you are running on an Intel GPU an adtional extension is required for HDR Tone mapping.
+            </p>
+            <pre>
+              <code>
+                {`flatpak install flathub org.jellyfin.JellyfinServer.Plugin.IntelComputeRuntime`}
+              </code>
+            </pre>
+          </>
+        )
+      }
+    ],
+    unstableButtons: [
+      {
+        id: 'flatpak-unstable-button',
+        name: 'Install Instructions',
+        details: (
+          <p>
+            <b>Note:</b> Only stable releases are distributed in Flathub.
+          </p>
+        )
+      }
+    ],
+    otherButtons: [
+      {
+        id: 'flatpak-flathub-link',
+        name: 'Flathub',
+        url: 'https://flathub.org/apps/org.jellyfin.JellyfinServer'
+      }
+    ]
+  },
+  {
     id: 'arch',
     name: 'Arch Linux',
     osTypes: [OsType.Linux],
